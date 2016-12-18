@@ -1,0 +1,199 @@
+{% extends 'MainBundle::layout.html.twig' %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+	<script type="text/javascript" src="/vendor/datatables.net/js/jquery.dataTables.min.js"></script>
+	{# extensions for dataTables #}
+	<script type="text/javascript" src="/vendor/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+
+	<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.bootstrap.min.js"></script>
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+	<script type="text/javascript" src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+	<script type="text/javascript" src="//cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+	<script type="text/javascript" src="//cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+	<script type="text/javascript" src="//cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
+	<script type="text/javascript" src="//cdn.datatables.net/buttons/1.2.2/js/buttons.colVis.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+		    var table = $('.table').DataTable({
+		    	"initComplete": function () {
+
+		    		// add select search to table footer
+		    		if (typeof settings !== 'undefined' && settings.select_cols) {
+			    		var cols = this.api().columns(settings.select_cols);
+
+			    		cols.every( function () {
+			                var column = this;
+			                var select = $('<select><option value=""></option></select>')
+			                    .appendTo( $(column.header()) )
+			                    .on( 'change', function () {
+			                        var val = $.fn.dataTable.util.escapeRegex(
+			                            $(this).val()
+			                        );
+			                        column
+			                            .search( val ? val : '', true, false )
+			                            // .search( val ? '^'+val+'$' : '', true, false )
+			                            .draw();
+			                    } );
+
+		                	var unicTexts = [];
+			                column.data().unique().sort().each( function ( d, j ) {
+			                	// for tags
+			                	if (d.substring(0, 5) == "<span") {
+			                		$(d).each(function(i,val){
+			                			text = $.trim($(val).text());
+			                			if (text !== "" && $.inArray(text, unicTexts)<1 ) {
+			                				unicTexts.push( text );
+			                			}
+			                		});
+			                	// for no tags
+								} else {
+	                				unicTexts.push( d );
+			                		// $(d).each(function(i,val){
+			                			// console.log(val);
+			                			// if (val !== "" && $.inArray(val, unicTexts)<1 ) {
+			                			// }
+			                		// });
+								}
+			                } );
+							$(unicTexts).each(function(i,val){
+								if (val == "") {
+				                    select.append( '<option value="">[пусто]</option>' )
+								} else {
+				                    select.append( '<option>'+val+'</option>' )
+								}
+							});
+			            } );
+		    		}
+
+
+		    		// hack for pretty render big-data table
+		    		$('.workarea').removeClass('hidden');
+		    		var api = this.api();
+		    		api.draw();
+		    		$('#DataTables_Table_0_wrapper').css("padding-top", "20px");
+
+		    	},
+		    	"dom": '<"row"<"col-md-2"l> <"col-md-2"f> <"col-md-8"p>>t<"row padded"<"col-md-2"B><"col-md-10"i>>',
+		    	// "scrollY":        "650px",
+		        "scrollCollapse": true,
+		        "buttons": [ 'copy', 'csv', 'excel' ],
+		    	"language": {
+		            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Russian.json",
+		        }
+		    });
+		    table.buttons().container().appendTo( '#DataTables_Table_0_wrapper' );
+
+    		$('#first_contact_filter').click( function(e) {
+		        table.draw();
+		    } );
+
+
+		    if (typeof settings !== 'undefined' && settings.range) {
+			    // https://datatables.net/plug-ins/filtering/row-based/range_dates
+			    var ss = settings.range;
+
+			    $.fn.dataTable.ext.search.push(
+				    function( settings, data, dataIndex ) {
+
+				    	var from = $(ss.start_selector).val().split("/");
+						var min = new Date(from[2], from[1] - 1, from[0]);
+
+				    	var from = $(ss.end_selector).val().split("/");
+						var max = new Date(from[2], from[1] - 1, from[0]);
+
+				        // default first contact Aug 1 2016
+				        var fc = new Date(data[ss.column] || 1470000000000);
+
+				        if (min.valueOf() <= fc.valueOf() && fc.valueOf() <= max.valueOf() ) {
+				        	return true;
+				        }
+				        return false;
+				    }
+				);
+		    }
+
+		    function apiCall(method, url, data, cb) {
+				console.log("api call to "+url+":");
+				$.ajax({
+			        type: method,
+			        url: url,
+			        dataType: 'json',
+			        success: function(data) {
+						cb({"result":data});
+			        },
+			        error: function(jqXHR, textStatus, errorThrown) {
+			        	cb({"error":jqXHR});
+			        },
+			        data: data
+			    });
+			}
+
+		    // edit
+		    $('.crm_save').click(function(){
+		    	var td = $(this).parent().parent()[0];
+		    	// id and type
+		    	var data = $(td).data();
+
+		    	$(td).find('td.field').each(function(){
+		    		var field = $(this).data().field;
+		    		var val = this.innerText;
+		    		val = val.replace(/\r?\n|\r/g, "<br>");
+
+		    		if ( $.trim(val)=="" ) {
+		    			var input = $(this).find('input');
+		    			val = $(input).val();
+		    		}
+		    		data[field] = val;
+		        });
+		        console.log(data);
+		    	apiCall("POST", "{{url('edit_save')}}", data, function(r){
+		    		console.log(r);
+		    	});
+		    });
+		    $('.crm_remove').click(function(){
+		    	var td = $(this).parent().parent()[0];
+		    	var data = $(td).data();
+
+		    	$(this).parent().parent().remove();
+		    	apiCall("POST", "{{url('edit_delete')}}", data, function(r){
+		    		console.log(r);
+		    	});
+		    });
+		} );
+	</script>
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+    <link href="/vendor/datatables.net-bs/css/dataTables.bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.bootstrap.min.css" type="text/css" rel="stylesheet">
+    <style type="text/css">
+    .padded {
+    	padding: 10px;
+    }
+    </style>
+{% endblock %}
+
+{% block main %}
+	<div class="col-md-2">
+	<div class="list-group">
+		<a class="list-group-item" href="{{url('profile_clients')}}">Клиенты</a>
+		<a class="list-group-item" href="{{url('profile_orders')}}">Заказы</a>
+		<a class="list-group-item" href="{{url('profile_reports')}}">Отчёты</a>
+		<a class="list-group-item" href="{{url('profile_phrases')}}">Фразы</a>
+		<a class="list-group-item" href="{{url('profile_tags')}}">Теги</a>
+		<a class="list-group-item" href="{{url('profile_products')}}">Товары</a>
+		<a class="list-group-item" href="{{url('profile_settings')}}">Настройки</a>
+	</div>
+	</div>
+	
+	<div class="col-md-10">
+	{% block main_profile %}
+	{{ content }}
+	{% endblock %}
+	</div>
+
+{% endblock %}

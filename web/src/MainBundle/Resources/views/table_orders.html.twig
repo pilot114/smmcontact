@@ -1,0 +1,24 @@
+<div class="workarea hidden">
+<table class="table table-bordered table-striped">
+	<thead>
+		<th>Номер заказа</th>
+		<th>Клиент</th>
+		<th>Cтатус</th>
+		<th>Дата заказа</th>
+		<th>Цена</th>
+		<th>Комментарий</th>
+	</thead>
+	<tbody>
+	{% for index, order in orders %}
+		<tr>
+		<td><a href="{{url('profile_order', {id: order._id})}}">{{order.number}}</a></td>
+		<td><a href="{{url('profile_client', {id: order.client_id})}}">{{order.client_fio}}</a></td>
+		<td>{{order|const('status')|raw}}</td>
+		<td>{{order.getCreatedAt.toDateTime|date("j M o") }}</td>
+		<td>{{order.price}} руб.</td>
+		<td>{{order.comment}}</td>
+		</tr>
+	{% endfor %}
+	</tbody>
+</table>
+</div>

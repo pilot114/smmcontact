@@ -1,0 +1,15 @@
+{
+    "name": "tn",
+    "dependencies": {
+        "bootstrap": "3.3.*",
+        "devbridge-autocomplete": "1.2.*",
+        "font-awesome": "4.6.*",
+        "jquery": "2.1.*",
+        "mixitup": "2.1.*",
+        "eonasdan-bootstrap-datetimepicker": "v4.*",
+        "datatables.net": "master",
+        "datatables.net-bs": "master",
+        "datatables-buttons": "master",
+        "jquery-jsonview": "master"
+    }
+}

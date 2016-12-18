@@ -1,0 +1,56 @@
+{% extends 'MainBundle::layout_search.html.twig' %}
+
+{% block content %}
+<h2><a href="{{ url('search') }}">← Назад</a></h2>
+
+<table class="table">
+<thead>
+<tr>
+<td>Название</td>
+<td>Прогресс</td>
+<td>Результат</td>
+<td>Статус</td>
+<td>Тип</td>
+<td>Инфо</td>
+{# <td>Код</td> #}
+</tr>
+</thead>
+<tbody>
+{% for task in tasks %}
+<tr>
+	<td>{{ task.name }}</td>
+	<td>
+		<div class="progress">
+		<div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="{{ task.percent }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ task.percent }}%">
+		{{ task.percent }}%
+		</div>
+		</div>
+	</td>
+	<td>
+		{{ task.data.offset }}/{{ task.data.total }}
+		{% if task.result %}
+			{{ task.result|length }}
+			{# {% for k,v in task.result.getArrayCopy %} {{k}}<br> {% endfor %} #}
+ 		{% endif %}
+	</td>
+	<td> {{ task.status }} </td>
+	<td> {{ task.type }} </td>
+	<td>
+		<pre>{{ task.data.phrases }}</pre>
+	</td>
+	{# <td> {{ task.code }} </td> #}
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% endblock %}
+
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript">
+
+$(document).ready(function(){
+});
+</script>
+{% endblock %}

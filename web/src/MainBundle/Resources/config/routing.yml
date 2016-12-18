@@ -1,0 +1,52 @@
+login_check:
+    path: /login_check
+logout:
+    path: /logout
+
+
+
+main:
+    path:     /
+    defaults: { _controller: MainBundle:Default:index }
+
+main_about:
+    path:     /about
+    defaults: { _controller: MainBundle:Default:about }
+
+main_tariffs:
+    path:     /tariffs
+    defaults: { _controller: MainBundle:Default:tariffs }
+
+main_contacts:
+    path:     /contacts
+    defaults: { _controller: MainBundle:Default:contacts }
+
+main_login:
+    path:     /login
+    defaults: { _controller: MainBundle:Default:login }
+
+main_register:
+    path:     /reg
+    defaults: { _controller: MainBundle:Default:register }
+
+main_create_zip:
+    path:     /create_zip
+    defaults: { _controller: MainBundle:Default:createZip }
+
+
+
+profile:
+    resource: "@MainBundle/Resources/config/profile.yml"
+    prefix:   /my
+
+api:
+    resource: "@MainBundle/Resources/config/api.yml"
+    prefix:   /api
+
+edit:
+    resource: "@MainBundle/Resources/config/edit.yml"
+    prefix:   /edit
+
+search:
+    resource: "@MainBundle/Resources/config/search.yml"
+    prefix:   /search

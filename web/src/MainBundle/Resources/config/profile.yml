@@ -1,0 +1,51 @@
+profile:
+    path:     /
+    defaults: { _controller: MainBundle:Profile:index }
+
+
+profile_clients:
+    path:     /client/list
+    defaults: { _controller: MainBundle:Profile:clients }
+
+profile_client:
+    path:     /client/{id}/view
+    defaults: { _controller: MainBundle:Profile:client }
+
+profile_orders:
+    path:     /order/list
+    defaults: { _controller: MainBundle:Profile:orders }
+
+profile_order:
+    path:     /order/{id}/view
+    defaults: { _controller: MainBundle:Profile:order }
+
+profile_reports:
+    path:     /reports
+    defaults: { _controller: MainBundle:Profile:reports }
+
+
+profile_phrases:
+    path:     /phrases
+    defaults: { _controller: MainBundle:Profile:phrases }
+profile_tags:
+    path:     /tags
+    defaults: { _controller: MainBundle:Profile:tags }
+profile_products:
+    path:     /products
+    defaults: { _controller: MainBundle:Profile:products }
+profile_settings:
+    path:     /settings
+    defaults: { _controller: MainBundle:Profile:settings }
+
+add_token:
+    path:     /add_token
+    defaults: { _controller: MainBundle:Profile:addToken }
+add_product:
+    path:     /add_product
+    defaults: { _controller: MainBundle:Profile:addProduct }
+add_tag:
+    path:     /add_tag
+    defaults: { _controller: MainBundle:Profile:addTag }
+add_phrase:
+    path:     /add_phrase
+    defaults: { _controller: MainBundle:Profile:addPhrase }

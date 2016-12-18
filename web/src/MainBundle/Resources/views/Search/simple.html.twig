@@ -1,0 +1,117 @@
+{% extends 'MainBundle::layout_search.html.twig' %}
+
+{% block content %}
+<h2><a href="{{ url('search') }}">← Назад</a></h2>
+
+
+<h1><a target="_blank" href="https://vk.com/dev/messages.getDialogs">messages.getDialogs</a></h1>
+<div>Лимит: 200</div>
+<div id="messages_getDialogs">
+	{% for field in fields_messages %}
+		<input type="text" name="{{field}}" placeholder="{{field}}">
+	{% endfor %}
+	<button class="execute">Execute</button>
+	<div class="result"></div>
+</div>
+
+<h1><a target="_blank" href="https://vk.com/dev/messages.get">messages.get</a></h1>
+<div>Лимит: 200</div>
+<div id="messages_get">
+	{% for field in fields_messages %}
+		<input type="text" name="{{field}}" placeholder="{{field}}">
+	{% endfor %}
+	<button class="execute">Execute</button>
+	<div class="result"></div>
+</div>
+
+<h1><a target="_blank" href="https://vk.com/dev/users.search">users.search</a></h1>
+<div>Лимит: 1000 (не зависит от offset)</div>
+<div id="users_search">
+	{% for field in fields_search %}
+		<input type="text" name="{{field}}" placeholder="{{field}}">
+	{% endfor %}
+	<button class="execute">Execute</button>
+	<div class="result"></div>
+</div>
+
+<h1><a target="_blank" href="https://vk.com/dev/audio.get">audio.get</a></h1>
+<div>Лимит: 5000</div>
+<div id="audio_get">
+	{% for field in fields_audio %}
+		<input type="text" name="{{field}}" placeholder="{{field}}">
+	{% endfor %}
+	<button class="execute">Execute</button>
+	<div class="result"></div>
+</div>
+
+<h1><a target="_blank" href="https://vk.com/dev/wall.getById">wall.getById</a></h1>
+<div id="wall_getById">
+	{% for field in fields_wall %}
+		<input type="text" name="{{field}}" placeholder="{{field}}">
+	{% endfor %}
+	<button class="execute">Execute</button>
+	<div class="result"></div>
+</div>
+
+<h1><a target="_blank" href="https://vk.com/dev/polls.getById">polls.getById</a></h1>
+<div id="polls_getById">
+	{% for field in poll_info %}
+		<input type="text" name="{{field}}" placeholder="{{field}}">
+	{% endfor %}
+	<button class="execute">Execute</button>
+	<div class="result"></div>
+</div>
+
+<h1><a target="_blank" href="https://vk.com/dev/polls.getVoters">polls.getVoters</a></h1>
+<div>Лимит: 1000 (если задан friends_only то 100)</div>
+<div id="polls_getVoters">
+	{% for field in poll_votes %}
+		<input type="text" name="{{field}}" placeholder="{{field}}">
+	{% endfor %}
+	<button class="execute">Execute</button>
+	<div class="result"></div>
+</div>
+{% endblock %}
+
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+	$('.execute').click(function(){
+		var method = $(this).parent().attr('id');
+		console.log("form: " + method);
+
+		var inputs = $(this).parent().find('input');
+		data = {};
+		$.each(inputs, function(i, v){
+			name = $(v).attr('name');
+			val = $(v).val();
+			data[name] = val;
+		});
+
+		var el = $(this);
+		var request = {"method":method, "args":data};
+		// console.log(request);
+
+		$.ajax({
+			type: "POST",
+			url: "{{ url('search_simple_post') }}",
+			data: request,
+			success: function(d){
+				var res = $(el.parent().find('.result'));
+				try {
+			        res.JSONView(d);
+			    } catch (e) {
+			    	res.text(d);
+			    }
+				console.log(d);
+			},
+			dataType: "json",
+		});
+	});
+});
+</script>
+{% endblock %}

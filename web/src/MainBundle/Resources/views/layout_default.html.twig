@@ -1,0 +1,14 @@
+{% extends 'MainBundle::layout.html.twig' %}
+
+{% block main %}
+<div class="col-md-12">
+	{# <div class="page-header">asd</div> #}
+	<div class="jumbotron">
+	<p class="lead">
+		{% block main_default %}
+		{{ content }}
+		{% endblock %}
+	</p>
+	</div>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'MainBundle::layout_profile.html.twig' %}
+
+{% block main_profile %}
+<h3>Добавить тег:</h3>
+<form action="{{ path('add_tag') }}" method="post" class="form-inline">
+    <div class="form-group">
+    <input type="text" name="text" class="form-control" placeholder="Текст">
+    </div>
+    <div class="form-group">
+    <input type="color" name="color" class="form-control" style="width: 50px;">
+    </div>
+    <button type="submit" class="btn btn-default">Отправить</button>
+</form>
+
+<table class="table table-bordered table-striped">
+	<thead>
+		<th>Текст</th>
+		<th>Цвет</th>
+		<th>Редактирование</th>
+	</thead>
+	<tbody>
+	{% for index, tag in tags %}
+		{% set id = tag._id.oid %}
+		<tr data-entity="tag" data-id="{{id}}">
+		<td data-field="text" class="field" contenteditable="true">{{tag.text|raw}}</td>
+		<td data-field="color" class="field" contenteditable="false">
+			<input type="color" class="form-control" style="width: 50px;" value="{{tag.color}}">
+		</td>
+		<td>
+			<button class="crm_save btn btn-primary">Сохранить</button>
+			<button class="crm_remove btn btn-danger">Удалить</button>
+		</td>
+		</tr>
+	{% endfor %}
+	</tbody>
+</table>
+
+{% endblock %}

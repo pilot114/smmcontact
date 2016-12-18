@@ -1,0 +1,7 @@
+edit_save:
+    path:     /save
+    defaults: { _controller: MainBundle:Edit:Save }
+
+edit_delete:
+    path:     /delete
+    defaults: { _controller: MainBundle:Edit:delete }

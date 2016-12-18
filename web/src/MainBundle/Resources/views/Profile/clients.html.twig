@@ -1,0 +1,52 @@
+{% extends 'MainBundle::layout_profile.html.twig' %}
+
+{% block stylesheets %}
+{{ parent() }}
+<link href="/vendor/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" type="text/css" rel="stylesheet">
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	<script src="/vendor/moment/min/moment.min.js"></script>
+	<script src="/vendor/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		$('.datetimepicker').datetimepicker({
+		    format: 'DD/MM/YYYY',
+		});
+	});
+
+	var settings = {
+		'select_cols' : [3,4,5],
+		'range' : {
+			'start_selector' : '#fc_start',
+			'end_selector'   : '#fc_end',
+			'column' 		 : 8
+		},
+	};
+	</script>
+{% endblock %}
+
+{% block main_profile %}
+
+	<div class="form-inline">
+		<div class="form-group">
+			<span>Первый контакт (период)</span>
+	    </div>
+		<div class='input-group date datetimepicker'>
+            <input type='text' class="form-control" placeholder="Начало" id="fc_start" value="{{min_fc|date('d/m/Y')}}"/>
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+        </div>
+		<div class='input-group date datetimepicker'>
+            <input type='text' class="form-control" placeholder="Конец" id="fc_end" value="{{ max_fc|date('d/m/Y') }}"/>
+            <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+            </span>
+        </div>
+	    <button class="btn btn-default" id="first_contact_filter">Фильтр</button>
+	</div>
+
+	{% include 'MainBundle::table_clients.html.twig' %}
+{% endblock %}

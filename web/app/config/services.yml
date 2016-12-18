@@ -1,0 +1,9 @@
+parameters:
+#    parameter_name: value
+
+services:
+  app.twig_extension:
+        class: MainBundle\Twig\CrmExtension
+        public: false
+        tags:
+            - { name: twig.extension }

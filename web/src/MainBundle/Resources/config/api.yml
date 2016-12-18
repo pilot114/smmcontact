@@ -1,0 +1,33 @@
+client_create:
+    path:     /client/create
+    defaults: { _controller: MainBundle:Api:clientCreate }
+order_create:
+    path:     /order/create
+    defaults: { _controller: MainBundle:Api:orderCreate }
+
+client_post:
+    path:     /client/post
+    defaults: { _controller: MainBundle:Api:clientPost }
+order_post:
+    path:     /order/post
+    defaults: { _controller: MainBundle:Api:orderPost }
+
+client_get:
+    path:     /client/get
+    defaults: { _controller: MainBundle:Api:clientGet }
+
+phrase_get:
+    path:     /phrase/get
+    defaults: { _controller: MainBundle:Api:phraseGet }
+
+order_get:
+    path:     /order/get
+    defaults: { _controller: MainBundle:Api:orderGet }
+
+product_get:
+    path:     /product/get
+    defaults: { _controller: MainBundle:Api:productGet }
+
+tag_get:
+    path:     /tag/get
+    defaults: { _controller: MainBundle:Api:tagGet }

@@ -1,0 +1,58 @@
+{% extends 'MainBundle::layout_search.html.twig' %}
+
+
+{% block content %}
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title">VK API Wrapper</h3>
+		</div>
+		<div class="panel-body">
+			Сервис предоставляет обертку над стандартным API, а также
+			несколько специальных методов, агрегирующих стандартные
+			(см. <a target="_blank" href="https://vk.com/dev/execute">vk.com/dev/execute</a>)
+			<br>
+			Лимит - это количество элементов, которые можно взять за 1 запрос, чем выше лимит, тем быстрее происходит парсинг.
+			Лимиты, действующие на стандартные методы, также относятся и к специальным, но только в контексте.
+			(Пример: нельзя взять больше 5000 аудиозаписей у одного пользователя, но можно по 5000 у 24 пользователей
+			(25 запросов это лимит) -> итого получаем 120 000 аудизаписей, или 360 000 аудиозаписей в секунду)
+			<br>
+			Также специальные методы позволяют фильтровать не только по параметрам поиска,
+			но и по полям результата поиска
+			<br>
+			<br>
+			Проще: есть стандартное API с так себе возможностями (зато работает быстро)
+			и есть хак, позволяющий создавать крутые фильтры, но работает чуть помедленнее
+			(иногда пара минут, иногда несколько часов).
+			Have fun! =)
+			<br>
+			Tips: все запросы осуществляются с помощью токена доступа, соотвествующего определенному пользователю или
+			сообществу vk
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-4">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="{{ url('search_simple') }}">Стандартное API</a>
+			</div>
+		</div>
+		</div>
+  		<div class="col-md-4">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="{{ url('search_extend') }}">Расширенное API</a>
+			
+			</div>
+		</div>
+  		</div>
+  		<div class="col-md-4">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<a href="{{ url('search_tasks') }}">Задачи</a>
+			</div>
+		</div>
+  		</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head>
+    <title>TN CRM</title>
+    <style>
+      body {
+        font-family: "Calibri", Tahoma, sans-serif;
+        font-size: 100%;
+      }
+      #status {
+        white-space: pre;
+        text-overflow: ellipsis;
+      }
+      #preloader {
+        width : 32px;
+        height: 32px;
+      }
+    </style>
+    <script src="jquery-3.1.0.min.js"></script>
+    <script src="settings.js"></script>
+    <script src="up/Debugger.js"></script>
+    <script src="up/Cacher.js"></script>
+    <script src="up/Http.js"></script>
+
+    <script src="popup.js"></script>
+  </head>
+  <body>
+    <div id="status">Token:</div>
+    <input id="input" type="text" name="token">
+    <hr>
+    <div>
+      <button id="update">Обновить кэш</button>
+      <div id="update_result"></div>
+    </div>
+  </body>
+</html>
+

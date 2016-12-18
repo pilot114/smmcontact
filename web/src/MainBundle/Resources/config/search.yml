@@ -1,0 +1,21 @@
+search:
+    path:     /
+    defaults: { _controller: MainBundle:Search:index }
+
+search_simple:
+    path:     /simple
+    defaults: { _controller: MainBundle:Search:simple }
+search_simple_post:
+    path:     /simple/post
+    defaults: { _controller: MainBundle:Search:simplePost }
+
+search_extend:
+    path:     /extend
+    defaults: { _controller: MainBundle:Search:extend }
+search_extend_post:
+    path:     /extend/post
+    defaults: { _controller: MainBundle:Search:extendPost }
+
+search_tasks:
+    path:     /tasks
+    defaults: { _controller: MainBundle:Search:tasks }

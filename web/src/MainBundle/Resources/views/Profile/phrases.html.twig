@@ -1,0 +1,48 @@
+{% extends 'MainBundle::layout_profile.html.twig' %}
+
+{% block main_profile %}
+<h3>Добавить фразу:</h3>
+<form action="{{ path('add_phrase') }}" method="post" class="form-inline">
+    <div class="form-group">
+    <input type="text" name="name" class="form-control" placeholder="Название">
+    </div>
+    <div class="form-group">
+    <input type="text" name="type" class="form-control" placeholder="Тип">
+    </div>
+    <div class="form-group">
+    <input type="text" name="text" class="form-control" placeholder="Текст">
+    </div>
+    <button type="submit" class="btn btn-default">Отправить</button>
+</form>
+
+<h3>Фразы</h3>
+<div>При составлении фраз можно использовать следующие подстановки:</div>
+<ul>
+	<li>[Name] 				  - имя клиента</li>
+	<li>[ExternalOrderNumber] - номер заказа</li>
+	<li>[SumFromClient] 	  - общая стоймость заказа</li>
+</ul>
+<table class="table table-bordered table-striped">
+	<thead>
+		<th>Название фразы</th>
+		<th>Тип</th>
+		<th>Текст фразы</th>
+		<th>Редактирование</th>
+	</thead>
+	<tbody>
+	{% for index, phrase in phrases %}
+		{% set id = phrase._id.oid %}
+		<tr data-entity="phrase" data-id="{{id}}">
+		<td data-field="name" class="field" contenteditable>{{phrase.name|raw}}</td>
+		<td data-field="type" class="field" contenteditable>{{phrase.type|raw}}</td>
+		<td data-field="text" class="field" contenteditable>{{phrase.text|raw}}</td>
+		<td>
+			<button class="crm_save btn btn-primary">Сохранить</button>
+			<button class="crm_remove btn btn-danger">Удалить</button>
+		</td>
+		</tr>
+	{% endfor %}
+	</tbody>
+</table>
+
+{% endblock %}

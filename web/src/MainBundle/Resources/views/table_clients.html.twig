@@ -1,0 +1,62 @@
+<div class="workarea hidden">
+<table class="table table-bordered table-striped">
+	<thead>
+		<th>ФИО</th>
+		<th>Контакты</th>
+		<th>Фото</th>
+		<th>Город</th>
+		<th>CRM статус</th>
+		<th>Теги</th>
+		<th>Комментарий</th>
+		<th>Заказы</th>
+		<th>Первый контакт</th>
+		<th>Последний контакт</th>
+		<th>Следующий контакт</th>
+		<th>Источник</th>
+	</thead>
+	<tbody>
+	{% for index, client in clients %}
+		<tr>
+		<td><a href="{{url('profile_client', {id: client._id})}}">{{client.fio}}</a></td>
+		<td>
+			<a target="_blank" href="http://vk.com/id{{client.vk_id}}">http://vk.com/id{{client.vk_id}}</a>
+			<a target="_blank" href="http://vk.com/im?sel={{client.vk_id}}">
+				<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+			</a>
+			<div>{{client.mobile}}</div>
+			<div>{{client.email}}</div>
+		</td>
+		{% set userpic = client.photo ?: '/default_photo.jpg' %}
+		<td><img class="client_pic" src="{{userpic}}"></td>
+		<td>{{client.city}}</td>
+		<td>
+			{{client|const('crm_status')|raw }}
+		</td>
+
+		<td>
+		{% for tag in client.tags %}
+			<span class="label-big" style="background-color:{{tag.color}};">{{tag.text}}</span>
+		{% endfor %}
+		</td>
+
+		<td>{{client.comment}}</td>
+		<td>
+		{% for order in client.orders %}
+			<a href="{{ url('profile_order', {id:order.id}) }}">
+				{{order.price}}&nbsp;руб.
+			</a><br>
+			({{order.created.toDateTime|date("j M o") }})
+			<br>
+		{% endfor %}
+		</td>
+		<td data-time="{{client.first_contact.toDateTime|date("Y-m-d")}}">{{client.first_contact.toDateTime|date("j M o") }}</td>
+		<td data-time="{{client.last_contact.toDateTime|date("Y-m-d")}}">{{client.last_contact.toDateTime|date("j M o")}}</td>
+		<td data-time="{{client.next_contact ? client.next_contact.toDateTime|date("Y-m-d") : ''}}">
+			{{client.next_contact ? client.next_contact.toDateTime|date("j M o") : ''}}
+		</td>
+		<td>{{client|const('source')|raw}}</td>
+		</tr>
+	{% endfor %}
+	</tbody>
+</table>
+</div>

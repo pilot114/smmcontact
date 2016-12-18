@@ -1,0 +1,43 @@
+{% extends 'MainBundle::layout.html.twig' %}
+
+{# jquery-jsonview #}
+{% block stylesheets %}
+{{ parent() }}
+<link rel="stylesheet" type="text/css" href="/vendor/jquery-jsonview/dist/jquery.jsonview.min.css">
+<style type="text/css">
+.result {
+	font-size: 12px;
+}
+</style>
+{% endblock %}
+{% block javascripts %}
+{{ parent() }}
+<script type='text/javascript' src='/vendor/jquery-jsonview/dist/jquery.jsonview.min.js'></script>
+<script type='text/javascript' src='/js/bootstrap.file-input.js'></script>
+<script type="text/javascript">
+
+	// usage: createFileInMemory('test.txt', 'Hello world!');
+	function createFileInMemory(filename, text) {
+		var element = document.createElement('a');
+		element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+		element.setAttribute('download', filename);
+
+		element.style.display = 'none';
+		document.body.appendChild(element);
+
+		element.click();
+
+		document.body.removeChild(element);
+	}
+</script>
+{% endblock %}
+
+
+{% block body %}
+<div class="container">
+	<div class="row">
+		{% block content %}
+		{% endblock %}
+	</div>
+</div>
+{% endblock %}

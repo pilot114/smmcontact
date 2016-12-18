@@ -1,0 +1,56 @@
+{
+  "manifest_version" : 2,
+  "name"             : "TN CRM",
+  "version"          : "0.9",
+  "author"           : "pilot114",
+  "homepage_url"     : "http://85.143.214.78",
+  "default_locale"   : "ru",
+
+   "permissions": [
+      "tabs",
+      "storage",
+      "activeTab",
+      "https://*.vk.com/*",
+      "http://tn_crm.dev/*",
+      "http://*/*"
+   ],
+
+   "icons": {
+      "128": "images/128.png"
+   },
+
+   "background": {
+      "page": "src/background.html",
+      "js": ["src/background.js"]
+   },
+
+   "browser_action": {
+    "default_popup": "src/popup.html"
+  },
+
+   "content_scripts": [{
+      "css": [ "css/labels.css" ],
+      "js": [
+        "src/jquery-3.1.0.min.js",
+
+        "src/settings.js",
+        "src/up/Debugger.js",
+        "src/up/Router.js",
+        "src/up/Cacher.js",
+        "src/up/Http.js",
+        "src/up/Util.js",
+        "src/up/Application.js",
+        "src/up/BGProxy.js",
+        "src/up/Render.js",
+
+        "src/ac.js",
+        "src/normalize.js",
+        "src/main.js"
+      ],
+      "matches": [ "*://vk.com/*", "*://*.vk.com/*" ]
+   }]
+
+   // "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA40X2JZKf6WGir5E28WoxiB15OpTpErnF+1WL/rvtHQv1xBd9gm0Z+6q7k7UZKKCfsK35BhuyGTIwyERykQ6B3k4g7zxDxQHc31wKmPiF1ojNehMo606kwrSgpYUJwKvLqgs8rTohNRKfh2LC3JrwbpJaRnhk+BdNRfnQChRJEiLqIayNrnZ/RiSv4EV5HOSFK3IDDAiWGbeeCfFLIoYC1Vx0LqmQCP/fuYsDCGRlgwddXdq+e/RArML5JrBbZ+C9irUDdNnTy2jPXF05Wbr7NWFrxA1Pl6g4hjpwOnZ0F1VcRMf/a4V/VF/Fui1PkLZR5kC9pXd2FRxHQrkX+R1TqQIDAQAB",
+   // "update_url": "https://clients2.google.com/service/update2/crx",
+   // "web_accessible_resources": [ "scripts/*", "built/*" ]
+}

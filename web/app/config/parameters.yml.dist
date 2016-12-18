@@ -1,0 +1,18 @@
+parameters:
+    mongo_url: 'mongodb://mongo:27017'
+    mongo_user: wshell
+    mongo_password: secret
+    realm: realm1
+    wampUrl: 'ws://172.24.0.102:5550/'
+    mailer_transport: smtp
+    mailer_host: 172.24.0.105
+    mailer_user: pilot114
+    mailer_password: zxz13ZXZ
+    secret: 7de005b70d8a9a08b905e43bf611f0b00765dd6f
+
+    // TODO: remove    
+    database_host: 127.0.0.1
+    database_port: null
+    database_name: symfony
+    database_user: root
+    database_password: null

@@ -1,0 +1,108 @@
+{% extends 'base.html.twig' %}
+
+{% set user = ts.token.user %}
+
+{% block title %}Welcome!{% endblock %}
+
+{% block stylesheets %}
+    <link href="/vendor/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <style type="text/css">
+
+    @font-face { font-family: 'Calibri'; src: url('/fonts/calibri.woff') format('woff'); font-weight: normal; font-style: normal; }
+	@font-face { font-family: 'Calibri'; src: url('/fonts/calibrii.woff') format('woff'); font-weight: normal; font-style: italic; }
+	@font-face { font-family: 'Calibri'; src: url('/fonts/calibrib.woff') format('woff'); font-weight: bold; font-style: normal; }
+	@font-face { font-family: 'Calibri'; src: url('/fonts/calibriz.woff') format('woff'); font-weight: bold; font-style: italic; }
+
+    	body {
+			padding-top: 50px;
+			font-family: Calibri;
+			font-size: 16px;
+		}
+		table {
+			font-size: 14px;
+		}
+		.client_pic {
+			width: 100px;
+		}
+		thead {
+			cursor: pointer;
+		}
+
+		/* "vk style" */
+		.navbar {
+			background-color: #45668e;
+		}
+		.navbar-brand, .nav>li>a {
+			color: white;
+		}
+		.navbar-brand:hover, .nav>li>a:hover {
+		    background-color: #337ab7;
+			color: white;
+		}
+		.label-big {
+			padding: .2em .6em .3em;
+			margin: .1em;
+			font-size: 100%;
+			font-weight: bold;
+			line-height: 1.9;
+			color: #fff;
+			text-align: center;
+			white-space: nowrap;
+			vertical-align: baseline;
+			border-radius: .25em;
+		}
+    </style>
+{% endblock %}
+{% block javascripts %}
+    <script src="/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+{% endblock %}
+
+
+{% block body %}
+
+	{% block header %}
+		<nav class="navbar navbar-fixed-top">
+	      <div class="container">
+	        <div class="navbar-header">
+	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+	            <span class="sr-only">Toggle navigation</span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	          </button>
+	          <a class="navbar-brand" href="{{url('main')}}">TN CRM</a>
+	        </div>
+	        <div id="navbar" class="navbar-collapse collapse">
+
+	          <ul class="nav navbar-nav">
+				{% if is_granted('ROLE_USER') %}
+					<li><a href="{{url('profile')}}">Профиль</a></li>
+					<li><a href="{{url('logout')}}">Выйти ({{ user.name ?: user.login }})</a></li>
+				{% else %}
+					<li><a href="{{url('main_about')}}">О нас</a></li>
+					<li><a href="{{url('main_tariffs')}}">Тарифы</a></li>
+					<li><a href="{{url('main_contacts')}}">Контакты</a></li>
+					<li><a href="{{url('main_register')}}">Регистрация</a></li>
+					<li><a href="{{url('main_login')}}">Логин</a></li>
+				{% endif %}
+	          </ul>
+
+	        </div>
+	      </div>
+	    </nav>
+		<ul>
+			
+		</ul>
+	{% endblock %}
+
+	<div class="container-fluid">
+		<div class="row">
+			{% block main %}
+			{% endblock %}
+		</div>
+	</div>	
+
+	{% block footer %}{% endblock %}
+
+{% endblock %}

@@ -1,0 +1,152 @@
+{% extends 'MainBundle::layout_search.html.twig' %}
+
+{% block content %}
+<h2><a href="{{ url('search') }}">← Назад</a></h2>
+
+<div class="col-md-6" id="execute_1">
+	<h1>#1 Фильтр пользователей по аудиозаписям (задача)</h1>
+	
+	<input type="hidden" name="task" value="task">
+
+	<h2>Название задачи</h2>
+	<div class="form-group">
+		  <input type="text" class="form-control" name="task_name">
+	</div>
+
+	<div class="form-group">
+		<input type="file" name="uids" title="UIDS">
+	</div>
+
+	<h2>Ключевая фраза</h2>
+	<div class="form-group">
+		<textarea name="phrases" class="form-control" placeholder="По одной ключевой фразе в строке" rows="5"></textarea>
+	</div>
+
+	<h2>Параметры поиска</h2>
+	<p>Искать по</p>
+	<div class="radio">
+	  <label>
+	    <input type="radio" name="type_search" value="1" checked>
+	    Исполнители
+	  </label>
+	</div>
+	<div class="radio">
+	  <label>
+	    <input type="radio" name="type_search" value="2">
+	    Композиции
+	  </label>
+	</div>
+
+	<div class="checkbox">
+	<label>
+	  <input name="accord" type="checkbox"> Точное вхождение поисковой фразы
+	</label>
+	</div>
+
+	<p>Длительность (в секундах)</p>
+	<div class="form-inline">
+	<div class="form-group">
+		<div class="col-sm-6">
+		  <input type="number" name="duration_min" class="form-control" placeholder="От">
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-sm-6">
+		  <input type="number" name="duration_max" class="form-control" placeholder="До">
+		</div>
+	</div>
+	</div>
+
+	<p>Минимальное количество совпадений (согласно условию)</p>
+	<div class="form-group">
+		  <input type="number" name="matches" class="form-control" value="1">
+	</div>
+
+	<button class="btn btn-default execute">Отправить</button>
+	<div class="result"></div>
+</div>
+
+<div class="form-inline col-md-6" id="execute_2">
+<h1>#2 Получение пользователей, участвующих в голосовании</h1>
+<div>Пример: -36039_1825365</div>
+
+	<input class="form-control" type="text" name="post" placeholder="post">
+	<button class="btn btn-default execute">Отправить</button>
+	<div class="result"></div>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+	function appendTextFilesToFormData(fd, elem) {
+		name = $(elem).attr('name');
+		var files = elem.files;
+
+		for (var i = 0; i < files.length; i++) {
+		  var file = files[i];
+		  if (!file.type.match('text.*')) {
+		    continue;
+		  }
+		  fd.append(name, file, file.name);
+		}
+		return fd;
+	}
+
+	$('input[type=file]').bootstrapFileInput();
+
+	$('.execute').click(function(){
+		var method = $(this).parent().attr('id');
+		console.log("form: " + method);
+
+		var inputs = $(this).parent().find('input');
+		var textareas = $(this).parent().find('textarea');
+		$.each(textareas, function(i, v){
+			inputs.push( v );
+		});
+
+		// POST data object
+		data = new FormData();
+		var args = {};
+
+		$.each(inputs, function(i, v){
+			console.log( $(v).attr('type') );
+
+			if ($(v).attr('type') == 'file') {
+				console.log('its file!');
+				appendTextFilesToFormData(data, v);
+			} else {
+				name = $(v).attr('name');
+				val = $(v).val();
+				args[name] = val;
+			}
+		});
+		data.append("method", method);
+		data.append("args", JSON.stringify(args));
+
+		var el = $(this);
+
+		$.ajax({
+			processData: false,
+			contentType: false,
+			type: "POST",
+			url: "{{ url('search_extend_post') }}",
+			data: data,
+			success: function(d){
+				var res = $(el.parent().find('.result'));
+				try {
+			        res.JSONView(d);
+			    } catch (e) {
+			    	res.text(d);
+			    }
+				console.log(d);
+			},
+			dataType: "json",
+		});
+	});
+});
+</script>
+{% endblock %}

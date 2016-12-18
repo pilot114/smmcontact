@@ -1,0 +1,77 @@
+version: '2'
+
+services:
+    sites:
+        build: sites
+        volumes:
+            - ../web:/usr/share/nginx/tn_crm
+    nginx:
+        build: nginx
+        ports:
+            - "80:80"
+        links:
+            - php
+        volumes:
+            - ./nginx/conf.d:/etc/nginx/conf.d
+        volumes_from:
+            - sites
+        networks:
+              mynet:
+                ipv4_address: 172.24.0.101
+    php:
+        build: php-fpm
+        ports:
+            - "9000:9000"
+            - "5550-5560:5550-5560"
+        volumes_from:
+            - sites
+        links:
+            - mongo
+        networks:
+              mynet:
+                ipv4_address: 172.24.0.102
+    mongo:
+        build: mongo
+        ports:
+            - "27017:27017"
+        volumes:
+            - ./mongo/data:/data/db
+        environment:
+            MONGO_ROOT_PASSWORD: secret
+            MONGO_DATABASE: wshell
+            MONGO_USER: wshell
+            MONGO_PASSWORD: secret
+        networks:
+              mynet:
+                ipv4_address: 172.24.0.104
+    mongo_ui:
+        build: mongo_ui
+        ports:
+            - "3000:3000"
+        links:
+            - mongo
+        networks:
+              mynet:
+                ipv4_address: 172.24.0.106
+    node:
+        build: node
+    mail:
+        build: mail
+        ports:
+            - "25:25"
+            - "587:587"
+        environment:
+            - maildomain=mail.wshell.ru
+            - smtp_user=pilot114:zxz13ZXZ
+        volumes:
+            - ./mail/domainkeys:/etc/opendkim/domainkeys
+            - ./mail/certs:/etc/postfix/certs
+        networks:
+              mynet:
+                ipv4_address: 172.24.0.105
+networks:
+  mynet:
+    driver: bridge
+    ipam:
+      config:
+      - subnet: 172.24.0.0/24

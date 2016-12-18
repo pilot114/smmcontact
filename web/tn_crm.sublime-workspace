@@ -1,0 +1,755 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"fin",
+				"findClient	(main.js)"
+			],
+			[
+				"clie",
+				"clientPanel"
+			],
+			[
+				"от",
+				"отправку"
+			],
+			[
+				"view",
+				"viewSources"
+			],
+			[
+				"sou",
+				"sources"
+			],
+			[
+				"отправ",
+				"отправку"
+			],
+			[
+				"statu",
+				"statuses"
+			],
+			[
+				"fo",
+				"foreach	foreach …"
+			],
+			[
+				"remi",
+				"reminders"
+			],
+			[
+				"da",
+				"data-text"
+			],
+			[
+				"dat",
+				"data-text=\"today"
+			],
+			[
+				"data",
+				"data-text"
+			],
+			[
+				"to",
+				"tomorrow〔variable〕"
+			],
+			[
+				"co",
+				"console"
+			],
+			[
+				"has",
+				"hasClass〔function〕"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"background",
+				"background-color	(labels.css)"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"post",
+				"postData"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"order",
+				"orderRender〔function〕"
+			],
+			[
+				"jq",
+				"jquery-3.1.0.min.js	(manifest.json)"
+			],
+			[
+				"cli",
+				"clientView"
+			],
+			[
+				"nex",
+				"next_contact"
+			],
+			[
+				"save",
+				"saveClient	(DataGenCommand.php)"
+			],
+			[
+				"C",
+				"Client"
+			],
+			[
+				"strs",
+				"str_split〔function〕"
+			],
+			[
+				"file",
+				"fileName"
+			],
+			[
+				"col-",
+				"col-md-11"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"cons",
+				"constNames"
+			],
+			[
+				"PRE",
+				"PRESEND"
+			],
+			[
+				"SE",
+				"SELF	(Client.php)"
+			],
+			[
+				"if",
+				"if	if …"
+			],
+			[
+				"use",
+				"use	(Client.php)"
+			],
+			[
+				"sec",
+				"security.token_storage"
+			],
+			[
+				"str",
+				"security.password_encoder"
+			],
+			[
+				"countOr",
+				"countOrder"
+			],
+			[
+				"н",
+				"Новосибирск"
+			],
+			[
+				"ra",
+				"rand"
+			],
+			[
+				"strto",
+				"strtotime"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"ge",
+				"genString"
+			],
+			[
+				"h",
+				"h2	Tag"
+			],
+			[
+				"pri",
+				"printf"
+			],
+			[
+				"is_a",
+				"is_array"
+			],
+			[
+				"in",
+				"input"
+			],
+			[
+				"is_",
+				"is_array"
+			],
+			[
+				"str_re",
+				"str_replace"
+			],
+			[
+				"array_p",
+				"array_pop"
+			],
+			[
+				"stru",
+				"structBlock"
+			],
+			[
+				"exp",
+				"explode"
+			],
+			[
+				"cu",
+				"curIsStruct"
+			],
+			[
+				"find",
+				"findNodeInMap"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "Packages/GoFeather/Go.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/GoFeather/Go.sublime-build",
+					""
+				],
+				[
+					"Packages/GoFeather/Go.sublime-build",
+					"Install"
+				],
+				[
+					"Packages/GoFeather/Go.sublime-build",
+					"Test"
+				],
+				[
+					"Packages/GoFeather/Go.sublime-build",
+					"Run (Single File)"
+				],
+				[
+					"Packages/GoFeather/Go.sublime-build",
+					"Quality Control"
+				]
+			],
+			[
+				"Packages/GoFeather/Go.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"fold",
+				"PHP Coding Standards Fixer: Fix this file (PHP Code Beautifier)"
+			],
+			[
+				"find",
+				"PHPCompanion:Find Use"
+			],
+			[
+				"php",
+				"PHP Coding Standards Fixer: Fix this file (PHP-CS-Fixer)"
+			],
+			[
+				"PHP Code Sniffer: ",
+				"PHP Code Sniffer: Sniff this file"
+			],
+			[
+				"Package C",
+				"Package Control: Install Package"
+			],
+			[
+				"Pack",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"set yam",
+				"Set Syntax: YAML"
+			],
+			[
+				"set twi",
+				"Set Syntax: HTML (Twig)"
+			],
+			[
+				"twi",
+				"Set Syntax: HTML (Twig)"
+			],
+			[
+				"",
+				"Build With: Go - Run (Single File)"
+			],
+			[
+				"go",
+				"Build With: Go - Install"
+			],
+			[
+				"bui",
+				"Build: New Build System"
+			],
+			[
+				"buid",
+				"Build With: Go - Install"
+			],
+			[
+				"pac",
+				"Preferences: Browse Packages"
+			],
+			[
+				"Pac",
+				"Snippet: try/catch"
+			],
+			[
+				"pack",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"phpcss",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"json",
+			"go doc",
+			"godoc"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Command",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Resources/views",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/tn_crm"
+	],
+	"file_history":
+	[
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/tn_crm/src/helpers.js",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/tn_crm/src/main.js",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/tn_crm/src/background.js",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/tn_crm/src/api.js",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/tn_crm/manifest.json",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/tn_crm/src/background.html",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/tn_crm/src/popup.html",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/tn_crm/src/popup.js",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Command/DataGenCommand.php",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Resources/views/layout_profile.html.twig",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Resources/views/layout.html.twig",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Controller/ApiController.php",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Service/Mongo.php",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Document/Product.php",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Resources/views/table_clients.html.twig",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Resources/config/api.yml",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Twig/CrmExtension.php",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/tn_crm/src/bg.html",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Controller/ProfileController.php",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Resources/views/Profile/phrases.html.twig",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Resources/views/Profile/products.html.twig",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Resources/config/profile.yml",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Resources/config/routing.yml",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Command/LoadPriceCommand.php",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Command/SqlToMongoCommand.php",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/tn_crm/css/labels.css",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/tn_crm/src/vk.css",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/web/vendor/bootstrap/dist/css/bootstrap.css",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/examples/started/popup.js",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/examples/started/popup.html",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/examples/started/manifest.json",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Document/Client.php",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Document/User.php",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Document/Document.php",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Document/Order.php",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Resources/views/table_orders.html.twig",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/tn_crm/src/readme.md",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Document/Phrase.php",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/extension/readme.md",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/extension/popup.js",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/tn_crm/src/jquery-3.1.0.min.js",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/extension/background.js",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/tn_crm/images/128.png",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/tn_crm/images/128.ico",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/bluesales/manifest.json",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/extension/manifest.json",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/bluesales/built/main.bundle.js",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/bluesales/built/background.bundle.js",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/bluesales/built/resources/fa2772327f55d8198301fdb8bcfc8158.woff",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/bluesales/built/whatsapp-page-script.bundle.js",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/bluesales/built/styles-all.bundle.js",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/bluesales/built/resources/448c34a56d699c29117adc64c43affeb.woff2",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/bluesales/built/resources/d7a1048fc82b9c01958e3a4625a501f9.png",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/extension/content.js",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/extension/_locales/ru/messages.json",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/extension/_locales/ru",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/extension/popup.html",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Resources/views/Profile/client.html.twig",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Resources/views/Profile/orders.html.twig",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Resources/views/Profile/settings.html.twig",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/extension/readme.txt",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/Request.php",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/vendor/symfony/symfony/src/Symfony/Component/HttpFoundation/JsonResponse.php",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Controller/DefaultController.php",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Resources/config/api.yaml",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/vk_db.sql",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/zips.json",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/vendor/symfony/symfony/src/Symfony/Component/Console/Input/InputArgument.php",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/vendor/symfony/symfony/src/Symfony/Component/Console/Input/InputInterface.php",
+		"/home/pilot114/vk_db.sql",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Resources/views/Profile/index.html.twig",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/web/vendor/datatables-buttons/css/buttons.bootstrap.scss",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/web/vendor/datatables-buttons/make.sh",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/bower.json",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Resources/views/Profile/clients.html.twig",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Resources/views/Profile/order.html.twig",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Resources/views/orders.html.twig",
+		"/home/pilot114/.config/sublime-text-3/Packages/SublimeCodeIntel/SublimeCodeIntel.sublime-settings",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Resources/views/clients.html.twig",
+		"/home/pilot114/sources/wshell/README.md",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/README.md",
+		"/home/pilot114/sources/wshell/web/README.md",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/app/config/services.yml",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/vendor/mongodb/mongodb/src/Model/BSONArray.php",
+		"/home/pilot114/.config/sublime-text-3/Packages/Package Control/Package Control.sublime-settings",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Controller/Controller.php",
+		"/home/pilot114/.config/sublime-text-3/Packages/Phpcs/Default (Linux).sublime-keymap",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Authentication/Token/UsernamePasswordToken.php",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/vendor/symfony/symfony/src/Symfony/Component/Console/Exception/InvalidArgumentException.php",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/vendor/mongodb/mongodb/src/Client.php",
+		"/home/pilot114/.config/sublime-text-3/Packages/User/PHP Companion.sublime-settings",
+		"/home/pilot114/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/pilot114/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+		"/home/pilot114/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/pilot114/.config/sublime-text-3/Packages/PHP/PHP.sublime-completions",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/web/apple-touch-icon.png",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/web/favicon.ico",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/vendor/symfony/symfony/src/Symfony/Component/Security/Core/Encoder/UserPasswordEncoder.php",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Command/UserPasswordEncoderCommand.php",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/composer.json",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/app/config/parameters.yml",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/vendor/mongodb/mongodb/src/Model/DatabaseInfo.php",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/vendor/mongodb/mongodb/src/Operation/ReplaceOne.php",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/vendor/mongodb/mongodb/src/functions.php",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/.gitignore",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/app/config/config.yml",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/web/app_dev.php",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/web/app.php",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/web/js/installer.js",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Service/DocumentFactory.php",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Resources/views/Default/tariffs.html.twig",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Resources/views/Default/register.html.twig",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Resources/views/Default/login.html.twig",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Resources/views/Default/contacts.html.twig",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Resources/views/Default/about.html.twig",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Resources/views/Default/index.html.twig",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/.bowerrc",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/app/Resources/views/layout.html.twig",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/app/config/security.yml",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/app/Resources/views/Emails/registration.html.twig",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Security/UserProvider.php",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Resources/config/services.yml",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Service/StringGenerator.php",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Service/Mailer.php",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/app/AppKernel.php",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Resources/views/Default/layout.html.twig",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/app/config/routing.yml",
+		"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/app/config/parameters.yml.dist"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/tn_crm/src",
+			"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src/MainBundle/Resources/views",
+			"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src",
+			"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/tests/tn_crm",
+			"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/web/vendor/bootstrap",
+			"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src",
+			"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/vendor",
+			"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/app/config",
+			"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/src",
+			"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/vendor/symfony",
+			"/home/pilot114/sources/wshell/dc/sites/files/tn_crm/vendor"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"createClient",
+			"clientRender",
+			"createClient",
+			"crm_panel",
+			".crm_panel",
+			"states",
+			"g.",
+			"crm_left_panel",
+			"states",
+			"createClient",
+			"getClientInfo",
+			"col-md-2",
+			"status",
+			"crm_status",
+			"api:\"clients",
+			"findLastUserOrder",
+			"console",
+			"orderRender",
+			"console.log",
+			"orderProducts",
+			"states",
+			"defaultPhrases",
+			"states.orders",
+			"update",
+			"next_contact",
+			"\n            ",
+			"post_client",
+			"orderNormalize",
+			"console",
+			"product",
+			"milliseconds",
+			"next_contact",
+			"clientRender",
+			"KSD_2",
+			"500",
+			"Product",
+			"click",
+			"today",
+			"enderAutocomplete",
+			"b",
+			"console",
+			"cons",
+			"im_editable",
+			"currentAuto",
+			"states",
+			"crm_phrases",
+			"phrasesRender",
+			"dial-info",
+			"label-success",
+			"createDefaultOrder",
+			"orderRender",
+			"createClientFromVk",
+			"getClientInfo",
+			"orderRe",
+			"sity",
+			"city",
+			"sity",
+			"getQueryVariable",
+			"orderRender",
+			"sendResponse",
+			"client_fio",
+			"find",
+			"source",
+			"order_type",
+			"Новосиб",
+			"default",
+			"Request",
+			"instanseof",
+			"new UTCDateTime",
+			"order",
+			"createdAt",
+			"encodePassword",
+			"');\n",
+			"ru",
+			"locale",
+			"createdAt",
+			"article",
+			"next",
+			"first",
+			"article",
+			"client",
+			"limit",
+			">",
+			"href",
+			"striped",
+			"getUser()",
+			"->setToken",
+			"Yaml",
+			"twig",
+			"message",
+			"findParamsInMap",
+			"hidd",
+			"arg_input",
+			"placeholder",
+			"defaultMode",
+			"pref",
+			":",
+			"recursiveKeys",
+			"testDim",
+			"регулярки",
+			"array(",
+			"');\n",
+			"sendmail"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"glob",
+			"["
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 118.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/GoFeather/Go.sublime-build",
+	"project": "tn_crm.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"src/MainBundle/Document/Client.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/sources/wshell/web/wshell.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 344.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

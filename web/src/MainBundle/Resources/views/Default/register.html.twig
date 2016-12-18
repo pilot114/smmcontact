@@ -1,0 +1,24 @@
+{% extends 'MainBundle::layout_default.html.twig' %}
+
+{% block main_default %}
+
+<div class="row">
+    <div class="col-sm-3">
+
+	<h2>Регистрация</h2>
+
+	{% if message %}
+		{{ message }}
+	{% endif %}
+
+	<form action="{{ url('main_register') }}" method="post">
+        <div class="form-group">
+			<input type="text" id="email" name="email" class="form-control" placeholder="Email">
+        </div>
+        <button type="submit" class="btn btn-default">Отправить</button>
+	</form>
+
+	</div>
+</div>
+
+{% endblock %}

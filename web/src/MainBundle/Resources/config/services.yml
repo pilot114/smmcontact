@@ -1,0 +1,17 @@
+services:
+  my_user_provider:
+    class: MainBundle\Security\UserProvider
+    arguments: ['@mongo']
+  mongo:
+    class: MainBundle\Service\Mongo
+    arguments: [%mongo_url%]
+  mongo_vk_api:
+    class: MainBundle\Service\VkTasksMongo
+    arguments: [%mongo_url%]
+  my_mailer:
+    class: MainBundle\Service\Mailer
+    arguments: ['@mailer', '@templating']
+  captcher:
+    class: MainBundle\Service\Captcher
+  gen_string:
+    class: MainBundle\Service\StringGenerator

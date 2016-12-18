@@ -1,0 +1,8 @@
+{% extends 'MainBundle::layout_profile.html.twig' %}
+
+{% block main_profile %}
+	{% include 'MainBundle::table_clients.html.twig' %}
+
+	<h3>Импортированные данные:</h3>
+	{{ dump(clients[0].imported) }}
+{% endblock %}

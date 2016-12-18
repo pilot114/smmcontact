@@ -1,0 +1,25 @@
+{% extends 'MainBundle::layout_profile.html.twig' %}
+
+
+{% block javascripts %}
+	{{ parent() }}
+	<script type="text/javascript" src="/js/installer.js"></script>
+{% endblock %}
+
+{% block main_profile %}
+	<div class="alert alert-warning" role="alert">Внимание! Доступ в систему заканчивается через 6 дней.
+	Во избежание блокировки, пожалуйста, внесите оплату</div>
+	<div class="alert alert-success" role="alert">
+		<p>Перед началом работы установите плагин. (скачивается zip, содержимое которого нужно установить
+		как расширение Chrome в режиме разработчика)</p>
+		<p>
+			<a href="{{ url('main_create_zip') }}" download="tn_crm">
+				<button type="button" class="btn btn-default">Установить плагин</button>
+			</a>
+		</p>
+	</div>
+	<h2>Клиенты (показаны {{ (clients_count>3) ? 3:clients_count }} из {{clients_count}} записей)</h2>
+	{% include 'MainBundle::table_clients.html.twig' %}
+	<h2>Заказы (показаны {{ (orders_count>3) ? 3:orders_count }} из {{orders_count}} записей)</h2>
+	{% include 'MainBundle::table_orders.html.twig' %}
+{% endblock %}
