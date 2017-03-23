@@ -1,9 +1,9 @@
 {
   "manifest_version" : 2,
-  "name"             : "TN CRM",
+  "name"             : "CRM",
   "version"          : "0.9",
   "author"           : "pilot114",
-  "homepage_url"     : "http://85.143.214.78",
+  "homepage_url"     : "http://89.223.27.167",
   "default_locale"   : "ru",
 
    "permissions": [
@@ -11,7 +11,7 @@
       "storage",
       "activeTab",
       "https://*.vk.com/*",
-      "http://tn_crm.dev/*",
+      "http://89.223.27.167/*",
       "http://*/*"
    ],
 
