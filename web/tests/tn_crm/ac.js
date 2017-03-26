@@ -1,42 +1,3 @@
-
-$('.im_editable').on('keydown', function(e) {
-    var editElem = $(e.target);
-    var text = editElem.text();
-
-    // backspace
-    if (e.which == 8) {
-        text = text.substring(0, text.length - 1);
-    }
-    // letters, numbers, russian keys
-    if ( (e.which <= 90 && e.which >= 48)
-        || e.which == 186
-        || e.which == 188
-        || e.which == 190
-        || e.which == 219
-        || e.which == 221
-        || e.which == 222
-    ) {
-        text += e.key;
-    }
-    var searched = searchPhrases(text);
-
-    renderAutocompleteIM(editElem, searched);
-
-    var selectCb = function(sa) {
-        $('.im_editable').removeAttr('contenteditable');
-        $('.im_editable').text(sa);
-        setTimeout(function() {
-            $('.im_editable').attr('contenteditable', 'true');
-        }, 10);
-    }
-    // up, down and enter key handling
-    selectAutocomplete(e, selectCb);
-
-    deb.log("q"+text);
-    deb.log("w"+editElem.text());
-
-});
-
 searchTag = function(text) {
 
     var searched = [];
@@ -44,7 +5,7 @@ searchTag = function(text) {
         return searched;
     }
 
-    ts = util.clone(app.state.tags);
+    ts = clone(states.tags);
 
     for (var i = 0; i < ts.length; i++) {
         t = ts[i];
@@ -83,7 +44,7 @@ searchProduct = function(text) {
         return searched;
     }
 
-    ps = util.clone(app.state.products);
+    ps = clone(states.products);
     
     for (var i = 0; i < ps.length; i++) {
         p = ps[i];
@@ -124,8 +85,8 @@ searchPhrases = function(text) {
         return searched;
     }
     
-    phs = util.clone(app.state.phrases);
-    phrases = updatePhrases( util.groupBy(phs, 'type') );
+    phs = clone(states.phrases);
+    phrases = updatePhrases( groupBy(phs, 'type') );
 
     for (var i = 0; i < phrases.length; i++) {
         type = phrases[i];
@@ -163,33 +124,33 @@ selectAutocomplete = function(e, selectCb) {
     switch(e.which) {
         // up
         case 38:
-            if (app.state.currentAuto === false) {
-                app.state.currentAuto = len-1;
+            if (states.currentAuto === false) {
+                states.currentAuto = len-1;
             } else {
-                if (app.state.currentAuto <= 0) {
-                    app.state.currentAuto = len-1;
+                if (states.currentAuto <= 0) {
+                    states.currentAuto = len-1;
                 } else {
-                    app.state.currentAuto -= 1;
+                    states.currentAuto -= 1;
                 }
             }
-            $(list[app.state.currentAuto]).addClass('selected_auto');
+            $(list[states.currentAuto]).addClass('selected_auto');
         break;
         // down
         case 40:
-            if (app.state.currentAuto === false) {
-                app.state.currentAuto = 0;
+            if (states.currentAuto === false) {
+                states.currentAuto = 0;
             } else {
-                if (app.state.currentAuto >= len-1) {
-                    app.state.currentAuto = 0;
+                if (states.currentAuto >= len-1) {
+                    states.currentAuto = 0;
                 } else {
-                    app.state.currentAuto += 1;
+                    states.currentAuto += 1;
                 }
             }
-            $(list[app.state.currentAuto]).addClass('selected_auto');
+            $(list[states.currentAuto]).addClass('selected_auto');
         break;
         // enter
         case 13:
-            selected_auto = list[app.state.currentAuto];
+            selected_auto = list[states.currentAuto];
             sa = $(selected_auto).attr('data-text');
             if (sa) {
                 selectCb(sa);

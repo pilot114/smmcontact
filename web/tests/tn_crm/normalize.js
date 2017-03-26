@@ -1,18 +1,3 @@
-function dateForInput(milliseconds) {
-    if (milliseconds) {
-        // convert string to integer
-        var d = new Date(+milliseconds);
-    } else {
-        var d = new Date();
-    }
-
-    var day = ("0" + d.getDate()).slice(-2);
-    var month = ("0" + (d.getMonth() + 1)).slice(-2);
-    return d.getFullYear()+"-"+(month)+"-"+(day);
-}
-
-// TODO: normalize convert "null or "undefined" to ""
-
 function clientNormalize(client, from_vk) {
     if (from_vk) {
         var nc = dateForInput();
@@ -45,10 +30,10 @@ function clientNormalize(client, from_vk) {
             "city"    : client.city,
             "source"  : client.source,
             "status"  : client.crm_status,
-            "comment" : (client.comment) ? client.comment : '',
-            "mobile"  : (client.mobile) ? client.mobile : '',
-            "email"   : (client.email) ? client.email : '',
-            'tags'    : (client.tags) ? client.tags : '',
+            "comment" : (client.comment !== null) ? client.comment : '',
+            "mobile"  : (client.mobile !== null) ? client.mobile : '',
+            "email"   : (client.email !== null) ? client.email : '',
+            'tags'    : (client.tags !== null) ? client.tags : '',
             'next_contact': nc,
             'last_contact': lc,
         }
@@ -61,12 +46,12 @@ function orderNormalize(order) {
     var cr = dateForInput(order.created.milliseconds);
 
     order = {
-        'number'      : order.number,
+        'order_number': order.order_number,
         'status'      : order.status,
         'created'     : cr,
         'products'    : order.products,
-        'price'       : (order.price) ? order.price : '',
-        'comment'     : (order.comment) ? order.comment : '',
+        'price'       : (order.price !== null) ? order.price : '',
+        'comment'     : (order.comment !== null) ? order.comment : '',
     }
     return order;
 }
